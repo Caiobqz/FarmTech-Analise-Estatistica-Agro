@@ -1,31 +1,48 @@
 # Fontes dos dados
 
-Registrar aqui somente as fontes efetivamente utilizadas.
+## Fonte principal definida
 
-## Fontes permitidas pela atividade
+- **Instituição:** Instituto Brasileiro de Geografia e Estatística — IBGE
+- **Sistema:** SIDRA — Sistema IBGE de Recuperação Automática
+- **Pesquisa:** Censo Agropecuário 2017
+- **Tabela:** 6880
+- **Título:** Número de estabelecimentos agropecuários e Área dos estabelecimentos agropecuários, por tipologia, grupos de atividade econômica, tipo de prática agrícola e grupos de área total
+- **Link direto:** https://sidra.ibge.gov.br/tabela/6880
+- **Ano dos dados:** 2017
+- **Abrangência usada no projeto:** municípios de Minas Gerais
+- **Variáveis numéricas:** número de estabelecimentos (unidades) e área dos estabelecimentos (hectares)
+- **Classificação usada:** grupos de área total
+- **Data de definição da fonte:** 05/10/2026
 
-- CONAB — Companhia Nacional de Abastecimento
-- IBGE — Instituto Brasileiro de Geografia e Estatística
-- MAPA — Ministério da Agricultura e Pecuária
-- Embrapa — Empresa Brasileira de Pesquisa Agropecuária
-- INPE — Instituto Nacional de Pesquisas Espaciais
-- CNA Brasil — Confederação da Agricultura e Pecuária do Brasil
+## Fonte institucional de apoio
 
-## Fonte escolhida
+Página do Censo Agropecuário 2017 no IBGE:
 
-**Status:** ainda não definida.
+https://www.ibge.gov.br/estatisticas/economicas/agricultura-e-pecuaria/21814-2017-censo-agropecuario.html
 
-Quando definida, preencher:
+## Recorte planejado
 
-- Instituição:
-- Sistema/tabela/conjunto de dados:
-- Link direto:
-- Data de acesso:
-- Ano/período dos dados:
-- Abrangência geográfica:
-- Unidade(s) de medida:
-- Observações:
+Serão usados 10 municípios e 3 grupos oficiais de área total, produzindo 30 registros.
+
+Grupos:
+- De 20 a menos de 50 ha
+- De 50 a menos de 100 ha
+- De 100 a menos de 200 ha
+
+As duas variáveis numéricas serão coletadas para cada combinação município × grupo.
+
+## Integridade da fonte
+
+- não substituir valor ausente/inibido por zero;
+- não arredondar ou alterar os valores publicados sem necessidade;
+- manter a unidade original;
+- registrar qualquer município substituído;
+- manter uma cópia do arquivo bruto exportado do SIDRA, se possível.
+
+## Roteiro
+
+Ver `docs/roteiro-coleta-sidra.md`.
 
 ## Regra
 
-Não basta citar a página inicial da instituição. Registrar o link exato da tabela, arquivo ou consulta utilizada sempre que possível.
+A fonte está definida. A coleta só será considerada concluída após conferir que existem 30 registros com valores utilizáveis para as duas variáveis numéricas.
