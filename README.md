@@ -12,7 +12,7 @@ Construir uma base de dados relacionada ao agronegócio, usando fonte pública o
 
 A fonte escolhida é o **IBGE — Censo Agropecuário 2017 — SIDRA — Tabela 6880**.
 
-A base será organizada com **10 municípios de Minas Gerais × 3 grupos oficiais de área total = 30 registros**.
+A base foi organizada com **10 municípios de Minas Gerais × 3 grupos oficiais de área total = 30 registros**.
 
 ### Variáveis
 
@@ -33,8 +33,6 @@ A base será organizada com **10 municípios de Minas Gerais × 3 grupos oficiai
    - análise gráfica quantitativa;
    - análise gráfica qualitativa.
 
-> A parte mecânica está sendo preparada no repositório. A coleta, os cálculos em R e a interpretação devem ser executados e compreendidos pelo grupo.
-
 ---
 
 ## Estrutura
@@ -43,6 +41,7 @@ A base será organizada com **10 municípios de Minas Gerais × 3 grupos oficiai
 FarmTech-Analise-Estatistica-Agro/
 ├── README.md
 ├── dados/
+│   ├── base_agro_fiap.xlsx
 │   ├── README.md
 │   ├── modelo_base.csv
 │   └── dicionario_dados.md
@@ -60,119 +59,32 @@ FarmTech-Analise-Estatistica-Agro/
 └── .gitignore
 ```
 
-## Arquivos finais esperados
+## Status atual
 
-```text
-dados/base_agro_fiap.xlsx
-scripts/analise_agro.R
-graficos/histograma.png
-graficos/boxplot.png
-graficos/grafico_qualitativo.png
-```
+### Concluído
 
----
+- [x] Repositório organizado.
+- [x] Fonte oficial definida.
+- [x] Consulta realizada no SIDRA.
+- [x] 30 registros coletados.
+- [x] Base Excel consolidada.
+- [x] Dicionário das variáveis documentado.
+- [x] Importação do Excel em R preparada.
+- [x] Validação estrutural em R preparada.
 
-# Plano por etapas
+### Em andamento
 
-## Etapa 0 — Organização
+- [ ] Preencher identificação obrigatória na primeira linha do arquivo R.
+- [ ] Executar e compreender a importação/validação no RStudio.
+- [ ] Análise quantitativa.
+- [ ] Separatrizes.
+- [ ] Gráficos quantitativos.
+- [ ] Análise qualitativa.
+- [ ] Gráfico qualitativo.
+- [ ] Revisão final.
 
-- [x] Repositório criado.
-- [x] Estrutura documentada.
-- [x] Guia de aprendizado criado.
-- [ ] Confirmar integrantes/RMs e responsáveis.
+## Próximo passo
 
-## Etapa 1 — Fonte e coleta
+Faça `git pull`, abra `scripts/analise_agro.R` no RStudio e execute as seções **1 a 4**.
 
-- [x] Fonte oficial escolhida.
-- [x] Tabela definida.
-- [x] Estratégia de 30 registros definida.
-- [x] Roteiro de coleta preparado.
-- [ ] Executar a consulta no SIDRA.
-- [ ] Conferir valores ausentes/inibidos.
-- [ ] Guardar os valores reais.
-
-Veja: `docs/roteiro-coleta-sidra.md`.
-
-## Etapa 2 — Variáveis
-
-- [x] Quatro variáveis definidas.
-- [x] Dicionário preparado.
-- [ ] O grupo deve justificar corretamente a classificação de cada variável.
-
-Veja: `dados/dicionario_dados.md`.
-
-## Etapa 3 — Base
-
-- [x] Modelo com 30 combinações criado.
-- [ ] Preencher os valores oficiais.
-- [ ] Criar `dados/base_agro_fiap.xlsx`.
-- [ ] Criar/confirmar aba de fonte e dicionário.
-
-## Etapa 4 — Validação
-
-Antes do R:
-
-- [ ] exatamente 30 ou mais registros utilizáveis;
-- [ ] nenhuma ausência tratada como zero;
-- [ ] sem duplicidade indevida;
-- [ ] unidades conferidas;
-- [ ] tipos das variáveis conferidos;
-- [ ] arquivo abre corretamente.
-
-## Etapa 5 — Tendência central e dispersão em R
-
-Etapa de aprendizado do grupo.
-
-- [ ] média;
-- [ ] mediana;
-- [ ] moda;
-- [ ] mínimo/máximo;
-- [ ] amplitude;
-- [ ] variância;
-- [ ] desvio padrão.
-
-## Etapa 6 — Separatrizes e gráficos quantitativos
-
-- [ ] Q1;
-- [ ] Q2;
-- [ ] Q3;
-- [ ] histograma;
-- [ ] boxplot;
-- [ ] interpretação.
-
-## Etapa 7 — Qualitativa
-
-- [ ] tabela de frequências;
-- [ ] gráfico de barras;
-- [ ] interpretação da variável ordinal.
-
-## Etapa 8 — Arquivo R final
-
-O esqueleto guiado está em `scripts/analise_agro.R`.
-
-- [ ] preencher a identificação exigida;
-- [ ] completar os comandos;
-- [ ] executar do início ao fim;
-- [ ] entender o resultado de cada bloco.
-
-## Etapa 9 — Auditoria pré-entrega
-
-- [ ] Excel confere com o SIDRA;
-- [ ] R executa sem erro;
-- [ ] requisitos do enunciado estão todos presentes;
-- [ ] arquivos corretos foram selecionados para upload;
-- [ ] grupo consegue explicar o trabalho.
-
----
-
-# Status atual
-
-**Concluído:** planejamento, fonte, desenho da base, dicionário, roteiro de coleta e estrutura guiada do R.
-
-**Próximo bloqueio:** obter os valores reais do SIDRA.
-
-## Próxima ação
-
-Abra `docs/roteiro-coleta-sidra.md` e faça a consulta da Tabela 6880.
-
-Quando tiver o Excel/CSV exportado pelo SIDRA, coloque-o no repositório ou envie aqui. A partir dele, a próxima etapa será validar a base sem fazer a análise estatística por você.
+O código já importa e valida a base. A partir da seção 5 começa a parte que deve ser desenvolvida e compreendida pelo grupo: a análise estatística.
