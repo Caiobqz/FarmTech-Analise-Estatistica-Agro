@@ -2,38 +2,103 @@
 
 # ============================================================
 # FarmTech - Análise Estatística de Dados do Agro
-# Roteiro guiado: complete os comandos e entenda cada resultado.
-# Fonte planejada: IBGE / Censo Agropecuário 2017 / SIDRA 6880
+# Fonte: IBGE / Censo Agropecuário 2017 / SIDRA - Tabela 6880
+# Base: dados/base_agro_fiap.xlsx
 # ============================================================
 
+# IMPORTANTE:
+# Antes da entrega, substitua a primeira linha pelos dados exigidos
+# pela FIAP (nome completo, RM, fase e capítulo).
+
 # 1. Pacotes -------------------------------------------------
-# OBJETIVO: usar um pacote capaz de ler arquivos .xlsx.
-# DICA: pesquise o pacote readxl e a função usada para ler Excel.
-# TODO: carregar somente os pacotes que realmente forem utilizados.
+# O pacote readxl é usado para ler arquivos .xlsx.
+#
+# Se ainda não estiver instalado, execute UMA VEZ no Console:
+# install.packages("readxl")
+
+if (!requireNamespace("readxl", quietly = TRUE)) {
+  stop(
+    "O pacote 'readxl' não está instalado. ",
+    "Execute install.packages('readxl') no Console do RStudio e tente novamente."
+  )
+}
+
+library(readxl)
 
 
-# 2. Importação da base ---------------------------------------
-# Arquivo final esperado: dados/base_agro_fiap.xlsx
-#
-# PERGUNTA:
-# Em qual objeto você quer guardar a tabela importada?
-#
-# TODO: escrever o comando de leitura do Excel.
+# 2. Caminho e importação da base -----------------------------
+arquivo_base <- file.path("dados", "base_agro_fiap.xlsx")
+
+if (!file.exists(arquivo_base)) {
+  stop(
+    "Arquivo não encontrado: ", arquivo_base,
+    "\nAbra o projeto pela pasta raiz do repositório antes de executar o script."
+  )
+}
+
+dados <- read_excel(
+  path = arquivo_base,
+  sheet = "Base"
+)
 
 
 # 3. Conferência inicial --------------------------------------
-# Antes de calcular qualquer estatística, descubra:
-# - quantas linhas existem;
-# - quantas colunas existem;
-# - quais são os nomes das colunas;
-# - que tipo de dado o R atribuiu a cada coluna;
-# - se existem valores ausentes.
-#
-# DICAS: procure por funções como dim(), names(), str() e summary().
-# TODO: escrever e executar as verificações.
+cat("\n=== DIMENSÕES DA BASE ===\n")
+print(dim(dados))
+
+cat("\nNúmero de linhas:", nrow(dados), "\n")
+cat("Número de colunas:", ncol(dados), "\n")
+
+cat("\n=== NOMES DAS COLUNAS ===\n")
+print(names(dados))
+
+cat("\n=== ESTRUTURA DOS DADOS ===\n")
+str(dados)
+
+cat("\n=== PRIMEIRAS LINHAS ===\n")
+print(head(dados))
+
+cat("\n=== VALORES AUSENTES POR COLUNA ===\n")
+print(colSums(is.na(dados)))
+
+cat("\n=== TOTAL DE VALORES AUSENTES ===\n")
+print(sum(is.na(dados)))
+
+cat("\n=== LINHAS DUPLICADAS ===\n")
+print(sum(duplicated(dados)))
 
 
-# 4. Variável quantitativa ------------------------------------
+# 4. Validação estrutural -------------------------------------
+colunas_esperadas <- c(
+  "Municipio",
+  "Grupo_Area",
+  "Numero_Estabelecimentos",
+  "Area_Estabelecimentos_ha"
+)
+
+if (!all(colunas_esperadas %in% names(dados))) {
+  stop(
+    "A base não possui todas as colunas esperadas. ",
+    "Confira dados/base_agro_fiap.xlsx."
+  )
+}
+
+if (nrow(dados) < 30) {
+  stop("A base possui menos de 30 registros.")
+}
+
+cat("\n=== VALIDAÇÃO INICIAL ===\n")
+cat("Base importada com sucesso.\n")
+cat("Há pelo menos 30 registros.\n")
+cat("As quatro colunas esperadas estão presentes.\n")
+
+
+# ============================================================
+# A PARTIR DAQUI COMEÇA A ETAPA DE ANÁLISE ESTATÍSTICA.
+# Não avance sem entender o que as verificações acima mostram.
+# ============================================================
+
+# 5. Variável quantitativa ------------------------------------
 # Recomendação: Area_Estabelecimentos_ha
 #
 # PERGUNTA:
@@ -42,7 +107,7 @@
 # TODO: selecionar/referenciar a coluna que será analisada.
 
 
-# 5. Tendência central ----------------------------------------
+# 6. Tendência central ----------------------------------------
 # A atividade exige medidas de tendência central.
 #
 # Faça:
@@ -52,13 +117,12 @@
 #
 # ATENÇÃO:
 # O R base possui funções diretas para média e mediana, mas "mode()"
-# não calcula a moda estatística. Você precisará pensar em como encontrar
-# o valor mais frequente.
+# não calcula a moda estatística.
 #
 # TODO: implementar uma medida de cada vez e conferir o resultado.
 
 
-# 6. Dispersão ------------------------------------------------
+# 7. Dispersão ------------------------------------------------
 # Calcule e entenda:
 # - mínimo;
 # - máximo;
@@ -66,13 +130,10 @@
 # - variância;
 # - desvio padrão.
 #
-# PERGUNTA:
-# O que um desvio padrão grande significaria neste conjunto de áreas?
-#
 # TODO: completar esta seção.
 
 
-# 7. Separatrizes ---------------------------------------------
+# 8. Separatrizes ---------------------------------------------
 # Calcule:
 # - Q1 (25%);
 # - Q2 (50%);
@@ -83,37 +144,30 @@
 # TODO: completar esta seção e comparar Q2 com a mediana.
 
 
-# 8. Gráficos quantitativos -----------------------------------
+# 9. Gráficos quantitativos -----------------------------------
 # Produza:
 # - histograma;
 # - boxplot.
 #
-# Os gráficos precisam ter títulos e identificação clara da variável.
-#
-# PERGUNTAS:
-# - o histograma sugere assimetria?
-# - o boxplot mostra possíveis outliers?
-#
 # TODO: criar os dois gráficos.
 
 
-# 9. Variável qualitativa -------------------------------------
+# 10. Variável qualitativa ------------------------------------
 # Recomendação: Grupo_Area
 #
 # PERGUNTA:
 # Por que essa variável é ordinal e não nominal?
 #
 # TODO: construir uma tabela de frequências.
-# DICA: investigue a função table().
 
 
-# 10. Gráfico qualitativo -------------------------------------
+# 11. Gráfico qualitativo -------------------------------------
 # Crie um gráfico de barras para a variável qualitativa.
 #
 # TODO: produzir o gráfico com título e categorias legíveis.
 
 
-# 11. Interpretação final -------------------------------------
+# 12. Interpretação final -------------------------------------
 # Não basta imprimir números.
 #
 # Escreva comentários curtos respondendo:
