@@ -1,8 +1,8 @@
-# CaioBarrosQueiroz_RM576443_faseX_cap7
-# KauêAraujo_RM576394_faseX_cap7
-# CleidimarDiasdaSilva_RM576009_faseX_cap7
-# JulliannaSilvaFurtado_RM579614_faseX_cap7
-# PauloVitorIsidoroSilva_RM575580_faseX_cap7
+# CaioBarrosQueiroz_RM576443_fase2_cap7
+# KauêAraujo_RM576394_fase2_cap7
+# CleidimarDiasdaSilva_RM576009_fase2_cap7
+# JulliannaSilvaFurtado_RM579614_fase2_cap7
+# PauloVitorIsidoroSilva_RM575580_fase2_cap7
 
 # ============================================================
 # FarmTech - Análise Estatística de Dados do Agro
@@ -12,7 +12,7 @@
 
 # IMPORTANTE:
 # Os nomes e RMs do grupo já foram preenchidos.
-# Antes da entrega, substitua "faseX" pela fase correta da disciplina.
+# Fase confirmada: 2.
 
 # 1. Pacotes -------------------------------------------------
 # O pacote readxl é usado para ler arquivos .xlsx.
