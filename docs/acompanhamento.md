@@ -1,11 +1,17 @@
 # Acompanhamento do trabalho
 
 ## Etapa 0 — Organização
-- Status: **em andamento**
+- Status: **concluída, exceto confirmação da fase**
 - Repositório: criado
 - Estrutura: criada
 - Documentação inicial: criada
-- Falta: confirmar identificação final de todos os integrantes no arquivo de entrega
+- Integrantes e RMs confirmados:
+  - Caio Barros Queiroz — RM576443
+  - Kauê Araujo — RM576394
+  - Cleidimar Dias da Silva — RM576009
+  - Jullianna Silva Furtado — RM579614
+  - Paulo Vitor Isidoro Silva — RM575580
+- Pendente: substituir `faseX` pela fase correta no cabeçalho do arquivo R
 
 ## Etapa 1 — Fonte e coleta
 - Status: **concluída**
@@ -84,11 +90,9 @@
 - Interpretações: documentadas
 
 ### Pendente obrigatório
-Substituir a primeira linha:
+Os nomes e RMs já estão preenchidos no topo de `scripts/analise_agro.R`.
 
-`# NomeCompleto_RMxxxxx_faseX_cap7`
-
-pela identificação exigida pela FIAP.
+Falta somente substituir `faseX` pela fase correta da disciplina.
 
 ## Etapa 9 — Revisão e entrega
 - Status: **pendente**
