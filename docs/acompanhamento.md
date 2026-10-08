@@ -1,111 +1,102 @@
 # Acompanhamento do trabalho
 
-Atualizar este arquivo conforme as etapas forem concluídas.
-
 ## Etapa 0 — Organização
-
 - Status: **em andamento**
 - Repositório: criado
 - Estrutura: criada
-- README: documentado
-- Guia de aprendizado: criado
-- Falta: confirmar integrantes/RMs e responsabilidades
+- Documentação inicial: criada
+- Falta: confirmar identificação final de todos os integrantes no arquivo de entrega
 
 ## Etapa 1 — Fonte e coleta
-
 - Status: **concluída**
 - Fonte: IBGE — Censo Agropecuário 2017
 - Sistema: SIDRA
 - Tabela: 6880
-- Consulta executada com 10 municípios × 3 grupos de área
-- Arquivo bruto conferido
-- Foram obtidos 30 registros e 60 valores numéricos
-- Não foram identificados valores ausentes na base consolidada
+- Recorte: 10 municípios × 3 grupos de área
+- Registros: 30
+- Valores numéricos coletados: 60
+- Valores ausentes na base consolidada: 0
 
 ## Etapa 2 — Variáveis
-
-- Status: **definida**
+- Status: **concluída**
 - Qualitativa nominal: `Municipio`
 - Qualitativa ordinal: `Grupo_Area`
 - Quantitativa discreta: `Numero_Estabelecimentos`
 - Quantitativa contínua: `Area_Estabelecimentos_ha`
-- Dicionário: `dados/dicionario_dados.md`
-
-A classificação já está documentada, mas o grupo ainda deve saber justificá-la.
 
 ## Etapa 3 — Excel
-
 - Status: **concluída**
-- Base final: `dados/base_agro_fiap.xlsx`
-- 30 registros
-- 4 colunas principais
-- Aba `Base`
-- Aba `Fonte_e_Dicionario`
-- Valores mantidos conforme a exportação do SIDRA
+- Arquivo: `dados/base_agro_fiap.xlsx`
+- Aba principal: `Base`
+- Aba documental: `Fonte_e_Dicionario`
+- Estrutura: 30 linhas × 4 colunas principais
 
-## Etapa 4 — Validação e importação no R
+## Etapa 4 — Validação no R
+- Status: **concluída**
+- 30 linhas
+- 4 colunas
+- 0 valores ausentes
+- 0 linhas duplicadas
+- nomes das colunas validados
 
-- Status: **código preparado**
-- `scripts/analise_agro.R` já contém:
-  - carregamento seguro do pacote `readxl`;
-  - leitura da aba `Base`;
-  - conferência de dimensões;
-  - nomes das colunas;
-  - estrutura dos dados;
-  - primeiras linhas;
-  - valores ausentes;
-  - linhas duplicadas;
-  - validação das quatro colunas esperadas;
-  - validação de pelo menos 30 registros.
+## Etapa 5 — Tendência central e dispersão
+- Status: **concluída**
+- Média: 24688,97 ha
+- Mediana: 22798,50 ha
+- Moda: inexistente (amodal)
+- Mínimo: 8499 ha
+- Máximo: 44178 ha
+- Amplitude: 35679 ha
+- Variância: 108084387 ha²
+- Desvio padrão: 10396,36 ha
 
-### Resultado esperado ao executar
-
-- 30 linhas;
-- 4 colunas;
-- 0 valores ausentes;
-- 0 linhas duplicadas.
-
-## Etapas 5 e 6 — Análise quantitativa
-
-- Status: **pendente — etapa de aprendizado**
-- Próximos conteúdos:
-  - média;
-  - mediana;
-  - moda;
-  - mínimo/máximo;
-  - amplitude;
-  - variância;
-  - desvio padrão;
-  - quartis;
-  - histograma;
-  - boxplot.
+## Etapa 6 — Separatrizes e gráficos quantitativos
+- Status: **concluída**
+- Q1: 16470,25 ha
+- Q2: 22798,50 ha
+- Q3: 32721,25 ha
+- IQR: 16251 ha
+- Outliers pelo critério 1,5 × IQR: nenhum
+- Histograma: implementado no script
+- Boxplot: implementado no script
+- Arquivos gerados pelo script:
+  - `graficos/histograma.png`
+  - `graficos/boxplot.png`
 
 ## Etapa 7 — Qualitativa
+- Status: **concluída**
+- Variável: `Grupo_Area`
+- Convertida para fator ordenado no R
+- Frequências: 10 / 10 / 10
+- Gráfico de barras: implementado
+- Arquivo gerado:
+  - `graficos/grafico_qualitativo.png`
 
-- Status: **pendente — etapa de aprendizado**
-- Saída esperada: frequências + gráfico de barras
+## Etapa 8 — Arquivo R final
+- Status: **consolidado**
+- Arquivo: `scripts/analise_agro.R`
+- Importação: pronta
+- Validação: pronta
+- Tendência central: pronta
+- Dispersão: pronta
+- Separatrizes: prontas
+- Gráficos: prontos
+- Interpretações: documentadas
 
-## Etapa 8 — R final
+### Pendente obrigatório
+Substituir a primeira linha:
 
-- Status: **em andamento**
-- Importação e conferência inicial já implementadas
-- Análise estatística ainda não implementada
-- Identificação da primeira linha ainda precisa ser preenchida com nome/RM/fase/capítulo
+`# NomeCompleto_RMxxxxx_faseX_cap7`
+
+pela identificação exigida pela FIAP.
 
 ## Etapa 9 — Revisão e entrega
-
 - Status: **pendente**
 
----
-
-## Próxima ação objetiva
-
-1. Fazer `git pull` no computador para receber a base e o script atualizados.
-2. Abrir o projeto no RStudio pela raiz do repositório.
-3. Abrir `scripts/analise_agro.R`.
-4. Preencher a primeira linha com os dados exigidos pela FIAP.
-5. Executar somente as seções 1 a 4.
-6. Confirmar que o Console mostra 30 linhas, 4 colunas, 0 ausências e 0 duplicidades.
-7. Depois começar a análise quantitativa.
-
-A etapa que realmente precisa ser aprendida agora é a análise estatística. A importação e a validação mecânica da base já estão preparadas.
+### Próxima ação
+1. Executar `source("scripts/analise_agro.R")` do início ao fim.
+2. Confirmar que não há erros.
+3. Confirmar que os três PNGs foram criados em `graficos/`.
+4. Preencher corretamente a identificação da primeira linha.
+5. Fazer a auditoria final contra o enunciado da FIAP.
+6. Só depois preparar o upload.
