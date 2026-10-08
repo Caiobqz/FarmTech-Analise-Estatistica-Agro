@@ -160,4 +160,4 @@ Depois execute novamente o script.
 
 Os nomes e RMs já foram adicionados ao topo de `scripts/analise_agro.R`.
 
-Ainda falta substituir `faseX` pela **fase correta da disciplina** antes do envio.
+Ainda falta substituir `fase2` pela **fase correta da disciplina** antes do envio.
