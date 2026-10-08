@@ -146,12 +146,18 @@ install.packages("readxl")
 
 Depois execute novamente o script.
 
+## Integrantes
+
+| Integrante | RM |
+|---|---:|
+| Caio Barros Queiroz | RM576443 |
+| Kauê Araujo | RM576394 |
+| Cleidimar Dias da Silva | RM576009 |
+| Jullianna Silva Furtado | RM579614 |
+| Paulo Vitor Isidoro Silva | RM575580 |
+
 ## Atenção antes da entrega
 
-A primeira linha de `scripts/analise_agro.R` ainda está como modelo:
+Os nomes e RMs já foram adicionados ao topo de `scripts/analise_agro.R`.
 
-```r
-# NomeCompleto_RMxxxxx_faseX_cap7
-```
-
-Ela precisa ser substituída pela identificação exigida no enunciado antes do envio.
+Ainda falta substituir `faseX` pela **fase correta da disciplina** antes do envio.
