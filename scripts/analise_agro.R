@@ -1,4 +1,8 @@
-# NomeCompleto_RMxxxxx_faseX_cap7
+# CaioBarrosQueiroz_RM576443_faseX_cap7
+# KauêAraujo_RM576394_faseX_cap7
+# CleidimarDiasdaSilva_RM576009_faseX_cap7
+# JulliannaSilvaFurtado_RM579614_faseX_cap7
+# PauloVitorIsidoroSilva_RM575580_faseX_cap7
 
 # ============================================================
 # FarmTech - Análise Estatística de Dados do Agro
@@ -7,8 +11,8 @@
 # ============================================================
 
 # IMPORTANTE:
-# Antes da entrega, substitua a primeira linha pelos dados exigidos
-# pela FIAP (nome completo, RM, fase e capítulo).
+# Os nomes e RMs do grupo já foram preenchidos.
+# Antes da entrega, substitua "faseX" pela fase correta da disciplina.
 
 # 1. Pacotes -------------------------------------------------
 # O pacote readxl é usado para ler arquivos .xlsx.
