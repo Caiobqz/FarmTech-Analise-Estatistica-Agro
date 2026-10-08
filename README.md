@@ -125,9 +125,10 @@ FarmTech-Analise-Estatistica-Agro/
 - [x] Análise qualitativa.
 - [x] Gráfico qualitativo.
 - [x] Script consolidado.
-- [ ] Preencher identificação obrigatória no topo do arquivo R.
-- [ ] Executar o script final do início ao fim.
-- [ ] Fazer auditoria pré-entrega.
+- [x] Identificação obrigatória preenchida no topo do arquivo R.
+- [x] Script final executado do início ao fim sem erro.
+- [x] Gráficos finais gerados localmente.
+- [x] Auditoria pré-entrega concluída.
 - [ ] Entregar na FIAP.
 
 ## Como executar
@@ -158,6 +159,12 @@ Depois execute novamente o script.
 
 ## Atenção antes da entrega
 
-Os nomes e RMs já foram adicionados ao topo de `scripts/analise_agro.R`.
+Os nomes, RMs, **Fase 2** e **Capítulo 7** já estão registrados no topo de `scripts/analise_agro.R`.
 
-Ainda falta substituir `fase2` pela **fase correta da disciplina** antes do envio.
+A versão final do script foi executada do início ao fim sem erro e gerou os três gráficos esperados.
+
+Na plataforma da FIAP, os entregáveis indicados no enunciado são:
+- `dados/base_agro_fiap.xlsx`;
+- `scripts/analise_agro.R`.
+
+Os PNGs, README e demais documentos permanecem no repositório como evidência e documentação do projeto.
