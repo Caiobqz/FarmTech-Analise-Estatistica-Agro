@@ -6,34 +6,86 @@ Projeto acadêmico da FIAP para a atividade **Cap. 7 — Decolando com Ciências
 
 ## Objetivo
 
-Construir uma base de dados relacionada ao agronegócio, usando fonte pública oficial, e realizar uma análise exploratória em **R**.
+Construir uma base relacionada ao agronegócio a partir de fonte pública oficial e realizar uma análise exploratória em **R**.
 
-## Estratégia definida
+## Fonte
 
-A fonte escolhida é o **IBGE — Censo Agropecuário 2017 — SIDRA — Tabela 6880**.
+**IBGE — Censo Agropecuário 2017 — SIDRA — Tabela 6880**
 
-A base foi organizada com **10 municípios de Minas Gerais × 3 grupos oficiais de área total = 30 registros**.
+A base utiliza 10 municípios de Minas Gerais combinados com três grupos oficiais de área total, produzindo **30 registros**.
 
-### Variáveis
+## Variáveis
 
-| Coluna | Tipo | Motivo |
-|---|---|---|
-| Municipio | Qualitativa nominal | identifica categorias sem ordem natural |
-| Grupo_Area | Qualitativa ordinal | as faixas possuem ordem natural crescente |
-| Numero_Estabelecimentos | Quantitativa discreta | é uma contagem em unidades |
-| Area_Estabelecimentos_ha | Quantitativa contínua | é uma medida de área em hectares |
+| Coluna | Classificação |
+|---|---|
+| `Municipio` | Qualitativa nominal |
+| `Grupo_Area` | Qualitativa ordinal |
+| `Numero_Estabelecimentos` | Quantitativa discreta |
+| `Area_Estabelecimentos_ha` | Quantitativa contínua |
 
-## Entregáveis obrigatórios
+## Arquivos principais
 
-1. **Excel** com pelo menos 30 linhas e as quatro categorias de variável.
-2. **Arquivo R** com:
-   - tendência central;
-   - dispersão;
-   - separatrizes;
-   - análise gráfica quantitativa;
-   - análise gráfica qualitativa.
+```text
+dados/base_agro_fiap.xlsx
+scripts/analise_agro.R
+```
 
----
+O script também gera:
+
+```text
+graficos/histograma.png
+graficos/boxplot.png
+graficos/grafico_qualitativo.png
+```
+
+## Análise implementada
+
+### Tendência central
+- média;
+- mediana;
+- verificação da moda.
+
+### Dispersão
+- mínimo;
+- máximo;
+- amplitude;
+- variância;
+- desvio padrão.
+
+### Separatrizes
+- Q1;
+- Q2;
+- Q3;
+- intervalo interquartil.
+
+### Análise gráfica quantitativa
+- histograma;
+- boxplot;
+- verificação de outliers pelo critério de 1,5 × IQR.
+
+### Análise qualitativa
+- conversão de `Grupo_Area` para fator ordinal;
+- tabela de frequências;
+- gráfico de barras.
+
+## Principais resultados da variável de área
+
+| Medida | Resultado |
+|---|---:|
+| Média | 24688,97 ha |
+| Mediana | 22798,50 ha |
+| Moda | amodal |
+| Mínimo | 8499 ha |
+| Máximo | 44178 ha |
+| Amplitude | 35679 ha |
+| Variância | 108084387 ha² |
+| Desvio padrão | 10396,36 ha |
+| Q1 | 16470,25 ha |
+| Q2 | 22798,50 ha |
+| Q3 | 32721,25 ha |
+| IQR | 16251 ha |
+
+Não foram identificados outliers pelo critério de **1,5 × IQR**.
 
 ## Estrutura
 
@@ -52,39 +104,54 @@ FarmTech-Analise-Estatistica-Agro/
 │   └── README.md
 ├── referencias/
 │   └── fontes.md
-├── docs/
-│   ├── acompanhamento.md
-│   ├── roteiro-coleta-sidra.md
-│   └── guia-aprendizado.md
-└── .gitignore
+└── docs/
+    ├── acompanhamento.md
+    ├── guia-aprendizado.md
+    └── roteiro-coleta-sidra.md
 ```
 
-## Status atual
+## Status
 
-### Concluído
+- [x] Fonte oficial escolhida.
+- [x] Dados coletados.
+- [x] Excel consolidado.
+- [x] Variáveis classificadas.
+- [x] Importação e validação em R.
+- [x] Tendência central.
+- [x] Dispersão.
+- [x] Separatrizes.
+- [x] Histograma.
+- [x] Boxplot.
+- [x] Análise qualitativa.
+- [x] Gráfico qualitativo.
+- [x] Script consolidado.
+- [ ] Preencher identificação obrigatória no topo do arquivo R.
+- [ ] Executar o script final do início ao fim.
+- [ ] Fazer auditoria pré-entrega.
+- [ ] Entregar na FIAP.
 
-- [x] Repositório organizado.
-- [x] Fonte oficial definida.
-- [x] Consulta realizada no SIDRA.
-- [x] 30 registros coletados.
-- [x] Base Excel consolidada.
-- [x] Dicionário das variáveis documentado.
-- [x] Importação do Excel em R preparada.
-- [x] Validação estrutural em R preparada.
+## Como executar
 
-### Em andamento
+Abra o RStudio pela raiz do repositório e, no Console, execute:
 
-- [ ] Preencher identificação obrigatória na primeira linha do arquivo R.
-- [ ] Executar e compreender a importação/validação no RStudio.
-- [ ] Análise quantitativa.
-- [ ] Separatrizes.
-- [ ] Gráficos quantitativos.
-- [ ] Análise qualitativa.
-- [ ] Gráfico qualitativo.
-- [ ] Revisão final.
+```r
+source("scripts/analise_agro.R")
+```
 
-## Próximo passo
+Se o pacote `readxl` ainda não estiver instalado:
 
-Faça `git pull`, abra `scripts/analise_agro.R` no RStudio e execute as seções **1 a 4**.
+```r
+install.packages("readxl")
+```
 
-O código já importa e valida a base. A partir da seção 5 começa a parte que deve ser desenvolvida e compreendida pelo grupo: a análise estatística.
+Depois execute novamente o script.
+
+## Atenção antes da entrega
+
+A primeira linha de `scripts/analise_agro.R` ainda está como modelo:
+
+```r
+# NomeCompleto_RMxxxxx_faseX_cap7
+```
+
+Ela precisa ser substituída pela identificação exigida no enunciado antes do envio.
