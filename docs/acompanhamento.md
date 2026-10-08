@@ -1,7 +1,7 @@
 # Acompanhamento do trabalho
 
 ## Etapa 0 — Organização
-- Status: **concluída, exceto confirmação da fase**
+- Status: **concluída**
 - Repositório: criado
 - Estrutura: criada
 - Documentação inicial: criada
@@ -79,7 +79,7 @@
   - `graficos/grafico_qualitativo.png`
 
 ## Etapa 8 — Arquivo R final
-- Status: **consolidado**
+- Status: **concluída e executada sem erro**
 - Arquivo: `scripts/analise_agro.R`
 - Importação: pronta
 - Validação: pronta
@@ -89,18 +89,22 @@
 - Gráficos: prontos
 - Interpretações: documentadas
 
-### Pendente obrigatório
-Os nomes e RMs já estão preenchidos no topo de `scripts/analise_agro.R`.
-
-Fase confirmada: **2**.
+### Identificação
+- Nomes e RMs preenchidos no topo do script.
+- Fase confirmada: **2**.
+- Capítulo confirmado: **7**.
 
 ## Etapa 9 — Revisão e entrega
-- Status: **pendente**
+- Status: **auditoria concluída / entrega pendente**
+- Script executado do início ao fim sem erro.
+- `histograma.png`, `boxplot.png` e `grafico_qualitativo.png` gerados com sucesso.
+- Requisitos do enunciado conferidos.
+- Entregáveis da FIAP: Excel + arquivo R.
 
 ### Próxima ação
-1. Executar `source("scripts/analise_agro.R")` do início ao fim.
-2. Confirmar que não há erros.
-3. Confirmar que os três PNGs foram criados em `graficos/`.
-4. Preencher corretamente a identificação da primeira linha.
-5. Fazer a auditoria final contra o enunciado da FIAP.
-6. Só depois preparar o upload.
+1. Fazer `git pull` para receber esta atualização documental.
+2. Conferir `git status`.
+3. Adicionar e enviar os três PNGs ao GitHub se ainda estiverem apenas no computador local.
+4. Fazer `git push`.
+5. Na FIAP, enviar somente os arquivos pedidos no enunciado: `base_agro_fiap.xlsx` e `analise_agro.R`.
+6. Abrir os dois arquivos uma última vez antes do upload.
