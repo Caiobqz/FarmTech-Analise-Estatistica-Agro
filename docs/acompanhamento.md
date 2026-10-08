@@ -11,7 +11,7 @@
   - Cleidimar Dias da Silva — RM576009
   - Jullianna Silva Furtado — RM579614
   - Paulo Vitor Isidoro Silva — RM575580
-- Pendente: substituir `faseX` pela fase correta no cabeçalho do arquivo R
+- Fase confirmada: **2**
 
 ## Etapa 1 — Fonte e coleta
 - Status: **concluída**
@@ -92,7 +92,7 @@
 ### Pendente obrigatório
 Os nomes e RMs já estão preenchidos no topo de `scripts/analise_agro.R`.
 
-Falta somente substituir `faseX` pela fase correta da disciplina.
+Fase confirmada: **2**.
 
 ## Etapa 9 — Revisão e entrega
 - Status: **pendente**
